@@ -21,6 +21,7 @@ namespace MATH2
 
             InitializeComponent();
           //  Console.SetOut(new ConsoleRedirector(consoleTextBox1));
+            Console.SetOut(new ConsoleRedirector(richTextBox1));
 
             #region built in plugin handle
             var q = from t in Assembly.GetExecutingAssembly().GetTypes()

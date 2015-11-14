@@ -78,9 +78,6 @@
     <Compile Include="BuiltInPlugins\QuadraticSequences.cs" />
     <Compile Include="BuiltInPlugins\VariablePlotter.cs" />
     <Compile Include="ConsoleRedirector.cs" />
-    <Compile Include="ConsoleTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="IMathPlugin.cs" />
     <Compile Include="MasterForm.cs">
       <SubType>Form</SubType>
