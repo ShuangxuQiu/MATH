@@ -10,13 +10,13 @@ namespace MATH2.BuiltInPlugins
 {
     public class LinearSequences : MATH2.IMathPlugin
     {
-        public List<Arg> GetArgs()
-        {
-            return new List<Arg>();
-        }
-        public void UpdateArgs(System.Windows.Forms.Control.ControlCollection clist)
-        {
-        }
+        //public List<Arg> GetArgs()
+        //{
+        //    return new List<Arg>();
+        //}
+        //public void UpdateArgs(System.Windows.Forms.Control.ControlCollection clist)
+        //{
+        //}
         public List<Expression> sequence = new List<Expression>();
         public Expression t_n = Expression.Symbol("n");
         public List<Step> steps = new List<Step>();

@@ -4,25 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace MATH2
 {
     public class ConsoleRedirector:TextWriter
     {
-        private MATH2.ConsoleTextBox textbox;
-        public ConsoleRedirector(MATH2.ConsoleTextBox textbox)
+        private RichTextBox textbox;
+        public ConsoleRedirector(RichTextBox textbox)
     {
         this.textbox = textbox;
     }
 
     public override void Write(char value)
     {
-        textbox.Write(value.ToString());
+        textbox.Text += value;
     }
 
     public override void Write(string value)
     {
-        textbox.Write(value);
+        textbox.Text += value;
     }
 
     public override Encoding Encoding

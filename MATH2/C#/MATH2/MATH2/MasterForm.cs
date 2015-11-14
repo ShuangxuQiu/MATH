@@ -56,22 +56,22 @@ namespace MATH2
                 return int.MinValue;
             }
         }
-        private void PUpdated(Arg a)
-        {
-      //      a.parent.UpdateArgs(flowLayoutPanel2.Controls);
-        }
-        private void LoadArgs(MATH2.IMathPlugin plugin)
-        {
-            List<Arg> args = plugin.GetArgs();
-            foreach (Arg arg in args)
-            {
-                arg.parent = plugin;
-                arg.r = new Arg.Return(PUpdated);
-                //flowLayoutPanel2.Controls.Add(arg.GetControl());
-                Console.WriteLine("added arg " + arg.displayname);
-            }
+      //  private void PUpdated(Arg a)
+      //  {
+      ////      a.parent.UpdateArgs(flowLayoutPanel2.Controls);
+      //  }
+        //private void LoadArgs(MATH2.IMathPlugin plugin)
+        //{
+        //    List<Arg> args = plugin.GetArgs();
+        //    foreach (Arg arg in args)
+        //    {
+        //        arg.parent = plugin;
+        //        arg.r = new Arg.Return(PUpdated);
+        //        //flowLayoutPanel2.Controls.Add(arg.GetControl());
+        //        Console.WriteLine("added arg " + arg.displayname);
+        //    }
             
-        }
+        //}
         private void OnTextChanged(string raw)//or whatever moooooo
         {
             List<int> probs = new List<int>();
@@ -111,6 +111,9 @@ namespace MATH2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(MasterForm.Clear){
+            Console.Clear();
+        }
             Console.WriteLine("Using the " + plugins[comboBox1.SelectedIndex].Name + " solver to solve your question:");
             Expression ex = null;
             try
@@ -119,7 +122,7 @@ namespace MATH2
             }
             catch { }
             MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[comboBox1.SelectedIndex]) as MATH2.IMathPlugin;
-            LoadArgs(pl);
+            //LoadArgs(pl);
             List<Step> steps = null;
             try
             {
