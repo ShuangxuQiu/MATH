@@ -38,3 +38,5 @@ C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\bin\Debug\MathNet.Symb
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.csprojResolveAssemblyReference.cache
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.Properties.Resources.resources
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.csproj.GenerateResource.Cache
+C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.MasterForm.resources
+C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\bin\Debug\FastColoredTextBox.dll

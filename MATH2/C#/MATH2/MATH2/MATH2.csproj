@@ -39,6 +39,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\..\..\..\..\..\..\Downloads\FastColoredTextBoxDemo\FastColoredTextBoxDemo\FastColoredTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="FParsec">
       <HintPath>..\packages\FParsec.1.0.2\lib\net40-client\FParsec.dll</HintPath>
     </Reference>
@@ -73,11 +76,24 @@
     <Compile Include="BuiltInPlugins\LinearSequences.cs" />
     <Compile Include="BuiltInPlugins\QuadraticSequences.cs" />
     <Compile Include="BuiltInPlugins\VariablePlotter.cs" />
+    <Compile Include="ConsoleRedirector.cs" />
+    <Compile Include="ConsoleTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="IMathPlugin.cs" />
+    <Compile Include="MasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm.Designer.cs">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Step.cs" />
     <Compile Include="Utils\Sequences.cs" />
+    <EmbeddedResource Include="MasterForm.resx">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
