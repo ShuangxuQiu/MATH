@@ -28,21 +28,14 @@ namespace MATH2
             //string raw = Console.ReadLine();
             //p.GetProb(raw, null);
             //p.Solve(raw, null);
-            #region built in plugin handle
-            var q = from t in Assembly.GetExecutingAssembly().GetTypes()
-                    where t.IsClass && t.Namespace == "MATH2.BuiltInPlugins"
-                    select t;
-            foreach (var t in q.ToList())
-            {
-               // Initialize(Activator.CreateInstance(t) as MATH2.IMathPlugin);
-                plugins.Add(t);
-            }
-            #endregion
+            
+            new MasterForm().ShowDialog();
+            /*
             string s = Console.ReadLine();
             /*
             try
             {
-               */ OnTextChanged(s);/*
+                OnTextChanged(s);
             }
             catch (Exception e)
             {
@@ -50,11 +43,12 @@ namespace MATH2
                 Console.WriteLine(e);
                 Console.WriteLine(e.InnerException);
             }
-             */
+             
             //Console.Clear();
                   Console.ReadKey();
                   Console.Clear();
             Main();
+            //*/
 
         }
         private static void OnTextChanged(string raw)//or whatever moooooo
@@ -84,7 +78,7 @@ namespace MATH2
             }
             if (steps != null)
             {
-                Console.ReadKey();
+             //   Console.ReadKey();
                 Console.WriteLine("Steps");
                 foreach (var step in steps)
                 {
