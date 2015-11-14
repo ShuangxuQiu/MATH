@@ -15,7 +15,7 @@ namespace MATH2
     public partial class MasterForm : Form
     {
         public List<Type> plugins = new List<Type>();
-        public static bool Clear = false;
+        public static bool Clear = true;
         public MasterForm()
         {
 
