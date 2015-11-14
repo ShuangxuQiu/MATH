@@ -1,0 +1,7 @@
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\bin\Debug\LibMATH.dll
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\bin\Debug\LibMATH.pdb
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\bin\Debug\QuadraticFactorization.dll
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\bin\Debug\QuadraticFactorization.pdb
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\obj\Debug\LibMATH.csprojResolveAssemblyReference.cache
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\obj\Debug\LibMATH.dll
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\LibMATH\obj\Debug\LibMATH.pdb

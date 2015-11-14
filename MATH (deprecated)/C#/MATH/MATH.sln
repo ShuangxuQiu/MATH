@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MATH", "MATH\MATH.csproj", "{B22A3ADA-F015-4B7D-B39D-5CA1EEC7C2B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadraticFactorization", "QuadraticFactorization\QuadraticFactorization.csproj", "{1F88A445-4BBC-4E38-A023-BAB0D062F792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibMATH", "LibMATH\LibMATH.csproj", "{8E309E28-BE02-45D8-8DB1-A6AEDA4E1F1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B22A3ADA-F015-4B7D-B39D-5CA1EEC7C2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22A3ADA-F015-4B7D-B39D-5CA1EEC7C2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22A3ADA-F015-4B7D-B39D-5CA1EEC7C2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22A3ADA-F015-4B7D-B39D-5CA1EEC7C2B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F88A445-4BBC-4E38-A023-BAB0D062F792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F88A445-4BBC-4E38-A023-BAB0D062F792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F88A445-4BBC-4E38-A023-BAB0D062F792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F88A445-4BBC-4E38-A023-BAB0D062F792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E309E28-BE02-45D8-8DB1-A6AEDA4E1F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E309E28-BE02-45D8-8DB1-A6AEDA4E1F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E309E28-BE02-45D8-8DB1-A6AEDA4E1F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E309E28-BE02-45D8-8DB1-A6AEDA4E1F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\MATH.exe.config
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\MATH.exe
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\MATH.pdb
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\QuadraticFactorization.dll
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\QuadraticFactorization.pdb
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.csprojResolveAssemblyReference.cache
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.Form1.resources
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.Properties.Resources.resources
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.csproj.GenerateResource.Cache
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.exe
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\obj\Debug\MATH.pdb
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\LibMATH.dll
+C:\Users\Rosha\Documents\Visual Studio 2012\Projects\MATH\MATH\bin\Debug\LibMATH.pdb
