@@ -73,18 +73,25 @@ namespace MATH2
             }
             MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[probs.IndexOf(probs.Max())]) as MATH2.IMathPlugin;
             Console.WriteLine("Using the " + plugins[probs.IndexOf(probs.Max())].Name + " solver to solve your question:");
-            List<Step> steps = pl.Solve(raw, e);
+            List<Step> steps = null;
             try
             {
+            steps = pl.Solve(raw, e);
                 Console.WriteLine("Answer: " + steps.Last());
             }
-            catch { Console.WriteLine("The solver failed to provide an answer"); }
-            Console.ReadKey();
-            Console.WriteLine("Steps");
-            foreach (var step in steps)
-            {
-                Console.WriteLine(step);
+            catch(Exception exc) { Console.Clear(); Console.WriteLine("A "+exc.GetType().Name+" error occured whilst the solver was calculating the answer.");
+            System.Threading.Thread.Sleep(2000); Console.Clear(); Main();
             }
+            if (steps != null)
+            {
+                Console.ReadKey();
+                Console.WriteLine("Steps");
+                foreach (var step in steps)
+                {
+                    Console.WriteLine(step);
+                }
+            }
+           // Console.Clear();
 
         }
         private static int GetProb(MATH2.IMathPlugin plugin, string raw, Expression e)

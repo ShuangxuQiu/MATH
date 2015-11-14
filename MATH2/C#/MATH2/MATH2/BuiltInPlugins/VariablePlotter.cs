@@ -14,7 +14,7 @@ namespace MATH2.BuiltInPlugins
         }
         public List<MATH2.Step> Solve(string raw, MathNet.Symbolics.Expression e)
         {
-            MathNet.Symbolics.Expression seq = MathNet.Symbolics.Infix.ParseOrThrow(raw);
+             MathNet.Symbolics.Expression seq = MathNet.Symbolics.Infix.ParseOrThrow(raw);
             int na = 1;
             List<Step> r = new List<Step>();
             Console.WriteLine("How many numbers to substitute x");
