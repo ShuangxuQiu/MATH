@@ -27,7 +27,7 @@ namespace MATH2
          //   new System.Threading.Thread(() =>
             {
                 buf += value;
-                if (buf.Length > 100)
+                if (buf.Length > 20)
                 {
                     textbox.Text += buf;
                     buf = "";
@@ -47,14 +47,14 @@ namespace MATH2
            // new System.Threading.Thread(() =>
             {
                 buf += value;
-                if (buf.Length > 100)
+                if (buf.Length > 20)
                 {
                     textbox.Text += buf;
                     buf = "";
                 }
                 ScrollToBottom();
             }
-           //).Start();
+            //).Start();
         }
 
         public override Encoding Encoding
