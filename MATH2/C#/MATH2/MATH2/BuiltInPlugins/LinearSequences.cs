@@ -14,7 +14,7 @@ namespace MATH2.BuiltInPlugins
         {
             return new List<Arg>();
         }
-        public void UpdateArgs(List<Arg> a)
+        public void UpdateArgs(System.Windows.Forms.Control.ControlCollection clist)
         {
         }
         public List<Expression> sequence = new List<Expression>();

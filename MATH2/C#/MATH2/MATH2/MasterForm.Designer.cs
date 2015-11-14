@@ -118,9 +118,9 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 45);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 41);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(146, 321);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(146, 325);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -129,7 +129,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 21);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 24);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 20);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1

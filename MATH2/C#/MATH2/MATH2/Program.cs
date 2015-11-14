@@ -73,8 +73,16 @@ namespace MATH2
             steps = pl.Solve(raw, e);
                 Console.WriteLine("Answer: " + steps.Last());
             }
-            catch(Exception exc) { Console.Clear(); Console.WriteLine("A "+exc.GetType().Name+" error occured whilst the solver was calculating the answer.");
-            System.Threading.Thread.Sleep(2000); Console.Clear(); Main();
+            catch (Exception exc)
+            {
+                if (MATH2.MasterForm.Clear)
+                {
+                    Console.Clear();
+                } Console.WriteLine("A " + exc.GetType().Name + " error occured whilst the solver was calculating the answer.");
+                System.Threading.Thread.Sleep(2000); if (MATH2.MasterForm.Clear)
+                {
+                    Console.Clear();
+                } Main();
             }
             if (steps != null)
             {

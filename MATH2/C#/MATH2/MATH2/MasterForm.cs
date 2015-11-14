@@ -15,6 +15,7 @@ namespace MATH2
     public partial class MasterForm : Form
     {
         public List<Type> plugins = new List<Type>();
+        public static bool Clear = true;
         public MasterForm()
         {
 
@@ -35,7 +36,8 @@ namespace MATH2
 
         private void fastColoredTextBox1_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
-            Console.Clear();
+            if (MATH2.MasterForm.Clear){Console.Clear();}
+            comboBox1.Items.Clear();
             try
             {
                 OnTextChanged(fastColoredTextBox1.Text);
@@ -54,6 +56,22 @@ namespace MATH2
                 return int.MinValue;
             }
         }
+        private void PUpdated(Arg a)
+        {
+            a.parent.UpdateArgs(flowLayoutPanel2.Controls);
+        }
+        private void LoadArgs(MATH2.IMathPlugin plugin)
+        {
+            List<Arg> args = plugin.GetArgs();
+            foreach (Arg arg in args)
+            {
+                arg.parent = plugin;
+                arg.r = new Arg.Return(PUpdated);
+                flowLayoutPanel2.Controls.Add(arg.GetControl());
+                Console.WriteLine("added arg " + arg.displayname);
+            }
+            
+        }
         private void OnTextChanged(string raw)//or whatever moooooo
         {
             List<int> probs = new List<int>();
@@ -64,9 +82,16 @@ namespace MATH2
                 ex = Infix.ParseOrThrow(fastColoredTextBox1.Text);
             }
             catch { }
-            foreach (var item in plugins)
+            try
             {
-                probs.Add(GetProb(Activator.CreateInstance(item) as MATH2.IMathPlugin, raw, ex));
+                foreach (var item in plugins)
+                {
+                    probs.Add(GetProb(Activator.CreateInstance(item) as MATH2.IMathPlugin, raw, ex));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
             foreach (var plugin in plugins)
             {
@@ -87,7 +112,6 @@ namespace MATH2
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Using the " + plugins[comboBox1.SelectedIndex].Name + " solver to solve your question:");
-            
             Expression ex = null;
             try
             {
@@ -95,6 +119,7 @@ namespace MATH2
             }
             catch { }
             MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[comboBox1.SelectedIndex]) as MATH2.IMathPlugin;
+            LoadArgs(pl);
             List<Step> steps = null;
             try
             {
@@ -103,7 +128,11 @@ namespace MATH2
             }
             catch (Exception exc)
             {
-                Console.Clear(); Console.WriteLine("A " + exc.GetType().Name + " error occured whilst the solver was calculating the answer.");
+                if (MATH2.MasterForm.Clear)
+                {
+                    Console.Clear();
+                }
+                Console.WriteLine("A " + exc.GetType().Name + " error occured whilst the solver was calculating the answer.");
                 //   System.Threading.Thread.Sleep(2000); Console.Clear();// Main();
             }
             if (steps != null)
