@@ -11,4 +11,5 @@ A modular calculator that can solve any maths problem.
 - [ ] Add external plugin support
  - [ ] Serializer
  - [x] Interface
- - 
+ - [ ] UC support
+- 
