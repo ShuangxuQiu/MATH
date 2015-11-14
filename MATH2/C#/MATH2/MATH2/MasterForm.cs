@@ -58,7 +58,7 @@ namespace MATH2
         }
         private void PUpdated(Arg a)
         {
-            a.parent.UpdateArgs(flowLayoutPanel2.Controls);
+      //      a.parent.UpdateArgs(flowLayoutPanel2.Controls);
         }
         private void LoadArgs(MATH2.IMathPlugin plugin)
         {
@@ -67,7 +67,7 @@ namespace MATH2
             {
                 arg.parent = plugin;
                 arg.r = new Arg.Return(PUpdated);
-                flowLayoutPanel2.Controls.Add(arg.GetControl());
+                //flowLayoutPanel2.Controls.Add(arg.GetControl());
                 Console.WriteLine("added arg " + arg.displayname);
             }
             
