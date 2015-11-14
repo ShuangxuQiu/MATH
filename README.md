@@ -1,2 +1,2 @@
 # MATH
-A calculator that can solve any maths problem.
+A modular calculator that can solve any maths problem.
