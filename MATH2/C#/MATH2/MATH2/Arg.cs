@@ -17,8 +17,23 @@ namespace MATH2
     }
     public class Arg
     {
-        public static dynamic GetValue(object thing)
+        private static object notlabelinflp(FlowLayoutPanel fp)
         {
+            foreach (var item in fp.Controls)
+            {
+                if (item.GetType() != typeof(Label))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public static dynamic GetValue(object thin)
+        {
+          //  Console.WriteLine("foo");
+            FlowLayoutPanel fpanel = (FlowLayoutPanel)thin;
+            object thing = notlabelinflp(fpanel);
+          //  Console.WriteLine(thing.GetType());
             if (thing.GetType() == typeof(NumericUpDown))
             {
                 NumericUpDown c = (NumericUpDown)thing;
@@ -60,7 +75,7 @@ namespace MATH2
         {
             FlowLayoutPanel panel = new FlowLayoutPanel();
             panel.Dock = DockStyle.Top;
-            panel.Size = new System.Drawing.Size(140, 20);
+            panel.Size = new System.Drawing.Size(300, 20);
             Label l = new Label();
             l.Text = displayname;
             panel.Controls.Add(l);
