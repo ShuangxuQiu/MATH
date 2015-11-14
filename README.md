@@ -17,3 +17,4 @@ A modular calculator that can solve any maths problem.
  - [ ] Serializer
  - [x] Interface
  - [ ] UC support
+ - [ ] Argument support
