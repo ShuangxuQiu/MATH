@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arg.cs" />
     <Compile Include="BuiltInPlugins\LinearSequences.cs" />
     <Compile Include="BuiltInPlugins\QuadraticSequences.cs" />
     <Compile Include="BuiltInPlugins\VariablePlotter.cs" />

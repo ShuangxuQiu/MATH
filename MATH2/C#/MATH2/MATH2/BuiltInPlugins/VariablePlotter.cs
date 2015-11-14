@@ -8,6 +8,13 @@ namespace MATH2.BuiltInPlugins
 {
     public class VariablePlotter: IMathPlugin
     {
+        public List<Arg> GetArgs()
+        {
+            return new List<Arg>();
+        }
+        public void UpdateArgs(List<Arg> a)
+        {
+        }
         public int GetProb(string raw, MathNet.Symbolics.Expression e)
         {
             return -99;
@@ -19,7 +26,8 @@ namespace MATH2.BuiltInPlugins
             List<Step> r = new List<Step>();
             Console.WriteLine("How many numbers to substitute x");
             StringBuilder sb = new StringBuilder();
-            int no = int.Parse(Console.ReadLine());
+           // int no = int.Parse(Console.ReadLine());
+            int no = 10;
             while (na != no)
             {
                 r.Add(

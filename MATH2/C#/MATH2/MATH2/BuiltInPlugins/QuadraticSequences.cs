@@ -9,6 +9,13 @@ namespace MATH2.BuiltInPlugins
 {
     public class QuadraticSequences:IMathPlugin
     {
+        public List<Arg> GetArgs()
+        {
+            return new List<Arg>();
+        }
+        public void UpdateArgs(List<Arg> a)
+        {
+        }
         public List<Expression> sequence = new List<Expression>();
         public Expression t_n = Expression.Symbol("n");
         public List<Step> steps = new List<Step>();

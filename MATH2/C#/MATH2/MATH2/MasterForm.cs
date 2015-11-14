@@ -35,6 +35,7 @@ namespace MATH2
 
         private void fastColoredTextBox1_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
+            Console.Clear();
             try
             {
                 OnTextChanged(fastColoredTextBox1.Text);
@@ -57,28 +58,53 @@ namespace MATH2
         {
             List<int> probs = new List<int>();
 
-            Expression e = null;
+            Expression ex = null;
             try
             {
-                e = Infix.ParseOrThrow(raw);
+                ex = Infix.ParseOrThrow(fastColoredTextBox1.Text);
             }
             catch { }
             foreach (var item in plugins)
             {
-                probs.Add(GetProb(Activator.CreateInstance(item) as MATH2.IMathPlugin, raw, e));
+                probs.Add(GetProb(Activator.CreateInstance(item) as MATH2.IMathPlugin, raw, ex));
             }
-            MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[probs.IndexOf(probs.Max())]) as MATH2.IMathPlugin;
-            Console.WriteLine("Using the " + plugins[probs.IndexOf(probs.Max())].Name + " solver to solve your question:");
+            foreach (var plugin in plugins)
+            {
+                comboBox1.Items.Add(plugin.Name);
+            }
+            
+            comboBox1.SelectedIndex = probs.IndexOf(probs.Max());
+            comboBox1_SelectedIndexChanged(null, null);
+            
+            // Console.Clear();
+        }
+
+        private void MasterForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Using the " + plugins[comboBox1.SelectedIndex].Name + " solver to solve your question:");
+            
+            Expression ex = null;
+            try
+            {
+                ex = Infix.ParseOrThrow(fastColoredTextBox1.Text);
+            }
+            catch { }
+            MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[comboBox1.SelectedIndex]) as MATH2.IMathPlugin;
             List<Step> steps = null;
             try
             {
-                steps = pl.Solve(raw, e);
+                steps = pl.Solve(fastColoredTextBox1.Text, ex);
                 Console.WriteLine("Answer: " + steps.Last());
             }
             catch (Exception exc)
             {
                 Console.Clear(); Console.WriteLine("A " + exc.GetType().Name + " error occured whilst the solver was calculating the answer.");
-             //   System.Threading.Thread.Sleep(2000); Console.Clear();// Main();
+                //   System.Threading.Thread.Sleep(2000); Console.Clear();// Main();
             }
             if (steps != null)
             {
@@ -89,8 +115,6 @@ namespace MATH2
                     Console.WriteLine(step);
                 }
             }
-            // Console.Clear();
-
         }
     }
 }

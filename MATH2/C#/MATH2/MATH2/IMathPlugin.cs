@@ -10,5 +10,7 @@ namespace MATH2
     {
         int GetProb(string raw,MathNet.Symbolics.Expression e);
         List<MATH2.Step> Solve(string raw,MathNet.Symbolics.Expression e);
+        List<Arg> GetArgs();
+        void UpdateArgs(List<Arg> a);
     }
 }
