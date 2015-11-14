@@ -5,6 +5,11 @@ A modular calculator that can solve any maths problem.
 - [x] Linear Sequences Solver
 - [x] Quadratic Sequences Solver
 - [x] Variable Substituter
+- [ ] Quadratic Equations Solver
+- [ ] Simplifier
+- [ ] Expander
+- [ ] Simultaneous Equations Solver
+- [ ] Interpolater
 
 ###Checklist:
 - [ ] Add UI
@@ -12,4 +17,3 @@ A modular calculator that can solve any maths problem.
  - [ ] Serializer
  - [x] Interface
  - [ ] UC support
-- 
