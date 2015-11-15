@@ -32,6 +32,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.laTeXDisplay1 = new MATH2.Controls.LaTeXDisplay();
             this.label3 = new System.Windows.Forms.Label();
             this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -42,8 +43,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.laTeXDisplay1 = new MATH2.Controls.LaTeXDisplay();
-            this.branch1 = new MATH2.Controls.Branch();
+            this.stepUC1 = new MATH2.Controls.StepUC();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,6 +60,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -103,6 +108,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(475, 68);
             this.panel2.TabIndex = 3;
+            // 
+            // laTeXDisplay1
+            // 
+            this.laTeXDisplay1.BackColor = System.Drawing.Color.Transparent;
+            this.laTeXDisplay1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.laTeXDisplay1.Location = new System.Drawing.Point(0, 15);
+            this.laTeXDisplay1.Name = "laTeXDisplay1";
+            this.laTeXDisplay1.Size = new System.Drawing.Size(475, 53);
+            this.laTeXDisplay1.TabIndex = 1;
             // 
             // label3
             // 
@@ -166,8 +180,9 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.splitContainer2.Panel2.Controls.Add(this.branch1);
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.splitContainer2.Panel2.Controls.Add(this.stepUC1);
+            this.splitContainer2.Panel2.Controls.Add(this.panel3);
             this.splitContainer2.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer2.Size = new System.Drawing.Size(811, 330);
             this.splitContainer2.SplitterDistance = 146;
@@ -248,27 +263,42 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // laTeXDisplay1
+            // stepUC1
             // 
-            this.laTeXDisplay1.BackColor = System.Drawing.Color.White;
-            this.laTeXDisplay1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.laTeXDisplay1.Location = new System.Drawing.Point(0, 15);
-            this.laTeXDisplay1.Name = "laTeXDisplay1";
-            this.laTeXDisplay1.Size = new System.Drawing.Size(475, 53);
-            this.laTeXDisplay1.TabIndex = 1;
+            this.stepUC1.BackColor = System.Drawing.Color.DimGray;
+            this.stepUC1.Location = new System.Drawing.Point(13, 154);
+            this.stepUC1.Name = "stepUC1";
+            this.stepUC1.Size = new System.Drawing.Size(617, 100);
+            this.stepUC1.TabIndex = 1;
             // 
-            // branch1
+            // panel3
             // 
-            this.branch1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.branch1.BackColor = System.Drawing.Color.DarkGray;
-            this.branch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branch1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.branch1.Location = new System.Drawing.Point(3, 3);
-            this.branch1.Name = "branch1";
-            this.branch1.Size = new System.Drawing.Size(115, 50);
-            this.branch1.TabIndex = 0;
+            this.panel3.Controls.Add(this.flowLayoutPanel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(661, 100);
+            this.panel3.TabIndex = 0;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.DimGray;
+            this.flowLayoutPanel2.Controls.Add(this.label4);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(661, 21);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Answer:";
             // 
             // MasterForm
             // 
@@ -296,6 +326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,12 +343,15 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
-        private Controls.Branch branch1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label2;
         private Controls.LaTeXDisplay laTeXDisplay1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label4;
+        private Controls.StepUC stepUC1;
     }
 }
