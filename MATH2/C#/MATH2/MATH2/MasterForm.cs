@@ -43,6 +43,17 @@ namespace MATH2
                 OnTextChanged(fastColoredTextBox1.Text);
             }
             catch { }
+            try
+            {
+                // url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text));
+                //Console.WriteLine(url);
+                laTeXDisplay1.LoadLatex(LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text)));
+            }
+            catch
+            {
+                //url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + fastColoredTextBox1.Text;
+                laTeXDisplay1.LoadLatex(fastColoredTextBox1.Text);
+            }
         }
         private int GetProb(MATH2.IMathPlugin plugin, string raw, Expression e)
         {
@@ -147,6 +158,25 @@ namespace MATH2
                     Console.WriteLine(step);
                 }
             }
+        }
+
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            string url = "";
+            laTeXDisplay1.size = trackBar1.Value;
+            try
+            {
+               // url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text));
+                //Console.WriteLine(url);
+                laTeXDisplay1.LoadLatex(LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text)));
+            }
+            catch
+            {
+                //url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + fastColoredTextBox1.Text;
+                laTeXDisplay1.LoadLatex(fastColoredTextBox1.Text);
+            }
+         //   laTeXDisplay1.LoadLatex(new Uri(url));
         }
     }
 }

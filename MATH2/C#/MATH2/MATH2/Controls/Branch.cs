@@ -13,11 +13,15 @@ namespace MATH2.Controls
 {
     public partial class Branch : UserControl
     {
+        [Description("The different lists of numbers to be displayed."), Category("Appearance")]
         public List<List<Expression>> branches = new List<List<Expression>>();
-        public int spread = 30;
+       // [Description("How far apart each number is from eachother."), Category("Appearance")]
+        public int spreadx = 30;
+        public int spready = 30;
         public int charspace = 5;
         public List<List<Point>> bottoms = new List<List<Point>>();
         public List<List<Point>> tops = new List<List<Point>>();
+        public Size lastsize;
 
      //   public List<Point> bottomstemp = new List<Point>();
        // public List<Point> topstemp = new List<Point>();
@@ -30,7 +34,7 @@ namespace MATH2.Controls
             branches.Add(le);
             branches.Add(le.Take(3).ToList());
         }
-        private void PaintBranch(List<Expression> branch, Point point,int spread, PaintEventArgs e)
+        private void PaintBranch(List<Expression> branch, Point point,int spreadx, PaintEventArgs e)
         {
             List<Point> topstemp = new List<Point>();
             List<Point> bottomstemp = new List<Point>();
@@ -42,7 +46,7 @@ namespace MATH2.Controls
                 bottomstemp.Add(new Point(point.X, point.Y + (charspace + Font.Height/3)));
                 //Console.WriteLine();
              //Console.Write(new Point(point.X, point.Y - charspace));
-                point.X += spread;
+                point.X += spreadx;
             }
             tops.Add(topstemp);
             bottoms.Add(bottomstemp);
@@ -52,15 +56,15 @@ namespace MATH2.Controls
            // e.Graphics.DrawLine(new Pen(new SolidBrush(ForeColor), 2), new Point(0,5), new Point(15,35));
            // int branchno = 0;
           //  int spread = initalspread;
-            
+           // Font.Size = ((this.Size.Height+this.Size.Width)/2) / 5;
             Point point = new Point(0, 0);
             foreach (var branch in branches)
             {
-                PaintBranch(branch, point, spread, e);
+                PaintBranch(branch, point, spreadx, e);
                // Console.WriteLine();
-                point.Y += spread;
+                point.Y += spready*2;
              //   spread = spread/2;
-                point.X += spread/2;
+                point.X += spreadx/2;
            //     bottoms.Add(bottomstemp);
              //   tops.Add(topstemp);
 
@@ -87,6 +91,26 @@ namespace MATH2.Controls
               //  Console.WriteLine();
                 no++;
             }
+        }
+
+        private void Branch_Resize(object sender, EventArgs e)
+        {
+            try
+            {
+                /*
+                int no1 = lastsize.Height - this.Size.Height;
+                int no2 = lastsize.Width - this.Size.Width;
+                int no = (no1 + no2) / 2;
+                if (no < 0)
+                {
+                    spread += 2;
+                }
+                else { spread -= 1; }//*/
+                spreadx = this.Size.Width / branches[0].Count;
+                spready = this.Size.Height / branches[0].Count;
+            }
+            catch { }
+            lastsize = this.Size;
         }
     }
 }

@@ -41,3 +41,4 @@ C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.csproj
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.MasterForm.resources
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\bin\Debug\FastColoredTextBox.dll
 C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.Controls.Branch.resources
+C:\Users\Rosha\Documents\GitHub\MATH\MATH2\C#\MATH2\MATH2\obj\Debug\MATH2.Controls.LaTeXDisplay.resources

@@ -35,8 +35,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Branch";
-            this.Size = new System.Drawing.Size(400, 150);
+            this.Size = new System.Drawing.Size(115, 50);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Branch_Paint);
+            this.Resize += new System.EventHandler(this.Branch_Resize);
             this.ResumeLayout(false);
 
         }
