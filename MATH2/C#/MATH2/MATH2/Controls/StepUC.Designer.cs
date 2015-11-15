@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Display = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.StepText = new System.Windows.Forms.Label();
-            this.Display = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -50,6 +50,18 @@
             this.panel1.Size = new System.Drawing.Size(522, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            // 
+            // Display
+            // 
+            this.Display.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Display.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Display.Location = new System.Drawing.Point(7, 5);
+            this.Display.Name = "Display";
+            this.Display.Size = new System.Drawing.Size(508, 90);
+            this.Display.TabIndex = 0;
+            this.Display.Click += new System.EventHandler(this.Display_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -75,18 +87,6 @@
             this.StepText.TabIndex = 0;
             this.StepText.Text = "label1";
             // 
-            // Display
-            // 
-            this.Display.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Display.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Display.Location = new System.Drawing.Point(7, 5);
-            this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(508, 90);
-            this.Display.TabIndex = 0;
-            this.Display.Click += new System.EventHandler(this.Display_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 1;
@@ -102,6 +102,7 @@
             this.Name = "StepUC";
             this.Size = new System.Drawing.Size(661, 100);
             this.Click += new System.EventHandler(this.StepUC_Click);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.StepUC_Paint);
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

@@ -51,19 +51,24 @@ namespace MATH2.BuiltInPlugins
                 // Expression e = new Expression();
                 //   e += exp;
                 sequence = MATH2.Utils.Sequences.ParseSequence(raw);
-                steps.Add(new Step(null, raw + " - start off with the sequence"));
+                steps.Add(new Step(null, raw + " - start off with the sequence",new StepData.LaTeXData(raw),StepData.DataType.LaTeX));
                 //  Console.WriteLine("First difference:");
                 Expression firstdif = S.GetDifference(sequence)[S.GetDifference(sequence).Count - 1];
-                steps.Add(new Step(firstdif, "find the first difference"));
+
+                List<List<Expression>> branches = new List<List<Expression>>();
+                branches.Add(sequence);
+                branches.Add(S.GetDifference(sequence));
+
+                steps.Add(new Step(firstdif, "find the first difference",new StepData.BranchData(branches)));
                 //Console.WriteLine(Infix.Print(firstdif));
                 t_n = t_n * firstdif;
-                steps.Add(new Step(t_n, "n must be multiple of first difference"));
+                steps.Add(new Step(t_n, "n must be multiple of first difference",t_n));
                 //substitute(thing,thingwith,raw);
                 // Console.WriteLine("Equation so far: " + Infix.Print(t_n));
                 // Console.WriteLine("offset: " + Infix.Print(FindOffset()));
-                steps.Add(new Step(FindOffset(), "subtract and calculate offset"));
+                steps.Add(new Step(FindOffset(), "subtract and calculate offset",FindOffset()));
                 t_n = t_n + FindOffset();
-                steps.Add(new Step(t_n, "add that offset to the t_n expression"));
+                steps.Add(new Step(t_n, "add that offset to the t_n expression",t_n));
                 //steps.Add(new Step(t_n, "boom, we now have a full expression for n in a linear sequence"));
                 //   Console.WriteLine("Answer: " + Infix.Print(t_n));
                 //     Console.Write("Sequence as calculated: ");

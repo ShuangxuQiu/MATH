@@ -23,6 +23,16 @@ namespace MATH2.Controls
         {
             InitializeComponent();
         }
+        public LaTeXDisplay(StepData.LaTeXData data)
+        {
+            InitializeComponent();
+            size = data.size;
+            autosize = data.autosize;
+            LaTex = data.tex;
+            Font = data.gd.font;
+            BackColor = data.gd.back;
+            ForeColor = data.gd.fore;
+        }
         public LaTeXDisplay(string latex)
         {
             InitializeComponent();

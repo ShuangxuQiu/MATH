@@ -34,6 +34,15 @@ namespace MATH2.Controls
             branches.Add(le);
             branches.Add(le.Take(3).ToList());
         }
+        public Branch(StepData.BranchData data)
+        {
+            InitializeComponent();
+
+            branches = data.branches;
+            Font = data.gd.font;
+            ForeColor = data.gd.fore;
+            BackColor = data.gd.back;
+        }
         private void PaintBranch(List<Expression> branch, Point point,int spreadx, PaintEventArgs e)
         {
             List<Point> topstemp = new List<Point>();

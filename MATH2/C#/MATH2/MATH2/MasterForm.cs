@@ -21,7 +21,6 @@ namespace MATH2
 
             InitializeComponent();
            // Console.SetOut(new ConsoleRedirector(richTextBox1));
-
             #region built in plugin handle
             var q = from t in Assembly.GetExecutingAssembly().GetTypes()
                     where t.IsClass && t.Namespace == "MATH2.BuiltInPlugins"
@@ -117,7 +116,7 @@ namespace MATH2
 
         private void MasterForm_Load(object sender, EventArgs e)
         {
-
+       
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +124,7 @@ namespace MATH2
             if(MasterForm.Clear){
             Console.Clear();
         }
+            Answers.Controls.Clear();
             Console.WriteLine("Using the " + plugins[comboBox1.SelectedIndex].Name + " solver to solve your question:");
             Expression ex = null;
             try
@@ -156,6 +156,13 @@ namespace MATH2
                 foreach (var step in steps)
                 {
                     Console.WriteLine(step);
+                    try
+                    {
+                        MATH2.Controls.StepUC uc = step.GetControl();
+                        uc.Dock = DockStyle.None;
+                        Answers.Controls.Add(uc);
+                    }
+                    catch { Console.WriteLine("No display defined"); }
                 }
             }
         }
@@ -177,6 +184,14 @@ namespace MATH2
                 laTeXDisplay1.LoadLatex(fastColoredTextBox1.Text);
             }
          //   laTeXDisplay1.LoadLatex(new Uri(url));
+        }
+
+        private void Answers_Paint(object sender, PaintEventArgs e)
+
+        {
+            Answers.AutoScroll = true;
+            Answers.HorizontalScroll.Enabled = false;
+            Answers.HorizontalScroll.Visible = false;
         }
     }
 }

@@ -12,13 +12,32 @@ namespace MATH2.Controls
 {
     public partial class StepUC : UserControl
     {
-        public bool shown = true;
-        public bool doo = false;
-        public StepUC()
+        private bool shown = true;
+        private bool doo = false;
+        public StepUC(string tex)
         {
             InitializeComponent();
+            SetStepText(tex);
         }
-
+        public void SetStepText(string foo)
+        {
+            this.StepText.Text = foo;
+        }
+        public T convert<T>(object data)
+        {
+            return (T)Convert.ChangeType(data,typeof(T));
+        }
+        public void Append(object data, StepData.DataType dt)
+        {
+            if (dt == StepData.DataType.Branch)
+            {
+                Display.Controls.Add(new Branch(convert<StepData.BranchData>(data)));
+            }
+            if (dt == StepData.DataType.LaTeX)
+            {
+                Display.Controls.Add(new LaTeXDisplay(convert<StepData.LaTeXData>(data)));
+            }
+        }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -87,6 +106,11 @@ namespace MATH2.Controls
         private void Display_Click(object sender, EventArgs e)
         {
             StepUC_Click(sender, e);
+        }
+
+        private void StepUC_Paint(object sender, PaintEventArgs e)
+        {
+            this.Width = this.Parent.Size.Width;
         }
     }
 }

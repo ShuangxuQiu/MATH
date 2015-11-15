@@ -108,6 +108,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Step.cs" />
+    <Compile Include="StepData\StepData.cs" />
     <Compile Include="Utils\Sequences.cs" />
     <EmbeddedResource Include="Controls\Branch.resx">
       <DependentUpon>Branch.cs</DependentUpon>
