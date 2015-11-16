@@ -2,6 +2,8 @@
 ---
 ###A modular calculator that can solve any maths problem.
 ![MATH2](https://cdn.pbrd.co/images/2bFNPewP.png)
+######If you know C#, then it would be great if you could make some solvers for the calculator. This program is a WIP. At the moment, it cannot solve *any* maths problem. It is a modular program, however, which means that mods can be added to it without changing the core code. If you can, please help make mods. Documentation for making mods will be available soon. The program includes API which allows the easy implementation of steps and diagrams, for example.
+
 
 #####Steps with Diagrams:
 ![Diagrams](https://cdn.pbrd.co/images/2bG26iaB.png)
