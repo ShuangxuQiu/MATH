@@ -27,11 +27,19 @@
 - [ ] Expander
 - [ ] Simultaneous Equations Solver
 - [ ] Interpolater
+- [ ] Refiner
 
 ###Checklist:
-- [ ] Add UI
+- [x] Add UI
 - [ ] Add external plugin support
  - [ ] Serializer
  - [x] Interface
- - [ ] UC support
+ - [x] UC support
  - [ ] Argument support
+- [x] Automatically detect best suited solver for the problem
+- [ ] Custom controls (diagrams)
+ - [x] LaTeX display control
+ - [x] Branch Diagram (for sequences)
+ - [ ] Graphs
+ - [ ] General Charts
+- [ ] Use a combination of solvers to reach an answer
