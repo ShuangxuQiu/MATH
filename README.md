@@ -1,5 +1,20 @@
 # MATH
-A modular calculator that can solve any maths problem.
+---
+###A modular calculator that can solve any maths problem.
+![MATH2](https://cdn.pbrd.co/images/2bFNPewP.png)
+
+#####Steps with Diagrams:
+![Diagrams](https://cdn.pbrd.co/images/2bG26iaB.png)
+
+#####Customizable UI:
+![UI](https://cdn.pbrd.co/images/2bG6YqIt.png)
+
+#####Question simplification:
+![Simplification](https://cdn.pbrd.co/images/2bGcbdIr.png)
+
+#####Complex LaTeX commands:
+![LaTeX](https://cdn.pbrd.co/images/2bGfkCqP.png)
+
 
 ###Solvers Checklist
 - [x] Linear Sequences Solver
