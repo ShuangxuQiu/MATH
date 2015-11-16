@@ -43,3 +43,6 @@
  - [ ] Graphs
  - [ ] General Charts
 - [ ] Use a combination of solvers to reach an answer
+- [x] Show/Hide step explanation
+ - [x] Animation
+ - [x] Animation is non-linear
