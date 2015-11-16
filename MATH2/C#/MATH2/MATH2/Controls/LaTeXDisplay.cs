@@ -46,7 +46,7 @@ namespace MATH2.Controls
         {
             if (autosize)
             {
-                size = (pictureBox1.Size.Height / 3) * 10;
+                size = (pictureBox1.Size.Height / MasterForm.resizefactor) * 10;
             }
         }
         private void LaTeXDisplay_Resize(object sender, EventArgs e)

@@ -31,15 +31,20 @@ namespace MATH2.BuiltInPlugins
         {
             sequence = Utils.Sequences.ParseSequence(raw);
             Expression seconddifference = Utils.Sequences.GetDifference(Utils.Sequences.GetDifference(sequence)).Last();
-            steps.Add(new Step(seconddifference, "get the second difference"));
+            List<List<Expression>> branches = new List<List<Expression>>();
+            branches.Add(sequence);
+            branches.Add(Utils.Sequences.GetDifference(sequence));
+            branches.Add(Utils.Sequences.GetDifference(Utils.Sequences.GetDifference(sequence)));
+            StepData.BranchData bd = new StepData.BranchData(branches);
+            steps.Add(new Step(seconddifference, "get the second difference ("+Infix.Print(seconddifference)+")",new StepData.BranchData(branches)));
             t_n = t_n * t_n;
-            steps.Add(new Step(t_n, "must be n^2 in quadratic sequence"));
+            steps.Add(new Step(t_n, "must be n^2 in quadratic sequence",t_n));
             t_n = t_n * ((seconddifference / 2));
-            steps.Add(new Step(t_n, "Half the second difference and multiply n^2 with it"));
+            steps.Add(new Step(t_n, "Half the second difference and multiply n^2 with it",t_n));
           //  Console.WriteLine(Infix.Print(FindOffset(1)));
             t_n += FindOffset(1);
-            steps.Add(new Step(FindOffset(1), "work out the offset with our current expression and the given sequence"));
-            steps.Add(new Step(t_n, "add the offset to our expression"));
+            steps.Add(new Step(FindOffset(1), "work out the offset with our current expression and the given sequence",FindOffset(1)));
+            steps.Add(new Step(t_n, "add the offset to our expression",t_n));
             int na = 1;
             StringBuilder sb = new StringBuilder();
             while (na != 10)
@@ -48,7 +53,7 @@ namespace MATH2.BuiltInPlugins
                 na++;
             }
             steps.Add(new Step(null, "Double check: " + sb.ToString()));
-            steps.Add(new Step(t_n, ""));
+            steps.Add(new Step(t_n, "final answer",t_n));
             return steps;
         }
         public int GetProb(string raw, Expression e)

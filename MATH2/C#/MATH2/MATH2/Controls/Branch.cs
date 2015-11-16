@@ -116,7 +116,9 @@ namespace MATH2.Controls
                 }
                 else { spread -= 1; }//*/
                 spreadx = this.Size.Width / branches[0].Count;
-                spready = this.Size.Height / branches[0].Count;
+                spready = this.Size.Height / (branches.Count*2);
+              //  spreadx = 10;
+                //spready = 10;
             }
             catch { }
             lastsize = this.Size;

@@ -16,6 +16,9 @@ namespace MATH2
     {
         public List<Type> plugins = new List<Type>();
         public static bool Clear = true;
+        public static bool ShownDefault = false;
+        public static int resizefactor = 8;
+        //public string lasttext="";
         public MasterForm()
         {
 
@@ -35,6 +38,7 @@ namespace MATH2
 
         private void fastColoredTextBox1_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
+          //  lasttext = fastColoredTextBox1.Text;
             if (MATH2.MasterForm.Clear){Console.Clear();}
             comboBox1.Items.Clear();
             try
@@ -125,6 +129,7 @@ namespace MATH2
             Console.Clear();
         }
             Answers.Controls.Clear();
+            this.FinalAnswer.Controls.Clear();
             Console.WriteLine("Using the " + plugins[comboBox1.SelectedIndex].Name + " solver to solve your question:");
             Expression ex = null;
             try
@@ -134,11 +139,39 @@ namespace MATH2
             catch { }
             MATH2.IMathPlugin pl = Activator.CreateInstance(plugins[comboBox1.SelectedIndex]) as MATH2.IMathPlugin;
             //LoadArgs(pl);
-            List<Step> steps = null;
+            List<Step> steps = pl.Solve(fastColoredTextBox1.Text, ex);// ;
             try
             {
-                steps = pl.Solve(fastColoredTextBox1.Text, ex);
+               // steps = pl.Solve(fastColoredTextBox1.Text, ex);
+                while (steps == null)
+                {
+                }
                 Console.WriteLine("Answer: " + steps.Last());
+                int no = steps.Count;
+                bool shouldtry = true;
+            tryagain:
+                if(no <= 0){
+                    shouldtry = false;
+                }
+                Console.WriteLine("trying");
+                try
+                {
+                    MATH2.Controls.StepUC uc = steps[no].GetControl();
+                    //overide these vars
+                    uc.needoffset = false;
+                    uc.stepnotevisible = false;
+                  //  uc.BackColor = FinalAnswer.BackColor;
+                
+                uc.Dock = DockStyle.None;
+                FinalAnswer.Controls.Add(uc);
+                }
+                catch
+                {
+                    no--;
+                    if(shouldtry){
+                    goto tryagain;
+                    }
+                }
             }
             catch (Exception exc)
             {
@@ -174,7 +207,7 @@ namespace MATH2
             laTeXDisplay1.size = trackBar1.Value;
             try
             {
-               // url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text));
+                // url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text));
                 //Console.WriteLine(url);
                 laTeXDisplay1.LoadLatex(LaTeX.Print(Infix.ParseOrThrow(fastColoredTextBox1.Text)));
             }
@@ -182,6 +215,17 @@ namespace MATH2
             {
                 //url = @"http://www.texrendr.com/cgi-bin/mathtex.cgi?\dpi{" + trackBar1.Value.ToString() + @"}" + fastColoredTextBox1.Text;
                 laTeXDisplay1.LoadLatex(fastColoredTextBox1.Text);
+               // Console.WriteLine(char.MinValue);
+              //  int no = (int)char.MinValue;
+               // while (no != char.MaxValue)
+                //{
+                  //  char c = (char)no;
+                    //System.Console.WriteLine("CharID: " + no + " | Bin: " 
+                      //  + string.Join(" ", System.Text.Encoding.UTF8.GetBytes(c.ToString()).Select(byt => 
+                        //    System.Convert.ToString(byt, 2).PadLeft(8, '0'))) 
+                        //+ " | Display: " + c);
+                    //no++;
+                //}
             }
          //   laTeXDisplay1.LoadLatex(new Uri(url));
         }
@@ -189,9 +233,16 @@ namespace MATH2
         private void Answers_Paint(object sender, PaintEventArgs e)
 
         {
+            //*
             Answers.AutoScroll = true;
             Answers.HorizontalScroll.Enabled = false;
             Answers.HorizontalScroll.Visible = false;
+            //*/
+        }
+        private void trackBar2_ValueChanged(object sender, EventArgs e)
+        {
+            resizefactor = 10 - (int)trackBar2.Value;
+            OnTextChanged(fastColoredTextBox1.Text);
         }
     }
 }

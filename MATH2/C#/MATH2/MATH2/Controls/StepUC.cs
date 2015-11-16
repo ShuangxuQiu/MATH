@@ -12,12 +12,35 @@ namespace MATH2.Controls
 {
     public partial class StepUC : UserControl
     {
+        public bool initialshown = false;
         private bool shown = true;
         private bool doo = false;
+        public bool needoffset = true;
+        public bool stepnotevisible = true;
+        private bool first = true;
         public StepUC(string tex)
         {
             InitializeComponent();
             SetStepText(tex);
+            
+        }
+        public void InstantSet(bool visible)
+        {
+            if (visible)
+            {
+                panel1.Size = new Size(flowLayoutPanel1.Location.X,panel1.Size.Height);
+            }
+            else
+            {
+                if (!needoffset)
+                {
+                    panel1.Size = new Size(this.Size.Width, panel1.Size.Height);
+                }
+                else
+                {
+                    panel1.Size = new Size(this.Size.Width, panel1.Size.Height);
+                }
+            }
         }
         public void SetStepText(string foo)
         {
@@ -40,14 +63,18 @@ namespace MATH2.Controls
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+           // Console.WriteLine("foo");
         }
 
         private void StepUC_Click(object sender, EventArgs e)
         {
          //   Console.WriteLine("click");
          //   shown = !shown;
-            doo = true;
-            timer1.Start();
+            if (stepnotevisible)
+            {
+                doo = true;
+                timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -110,7 +137,27 @@ namespace MATH2.Controls
 
         private void StepUC_Paint(object sender, PaintEventArgs e)
         {
-            this.Width = this.Parent.Size.Width;
+            if (needoffset)
+            {
+                this.Width = this.Parent.Size.Width - 23;
+            }
+            else
+            {
+                this.Width = this.Parent.Size.Width;
+            }
+            if (first)
+            {
+                InstantSet(initialshown);
+                shown = initialshown;
+                first = false;
+                StepUC_Click(null, null);
+            }
+        }
+
+        private void StepUC_Load(object sender, EventArgs e)
+        {
+        //    InstantSet(initialshown);
+          //  shown=initialshown;
         }
     }
 }

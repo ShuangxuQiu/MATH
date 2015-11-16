@@ -51,14 +51,14 @@ namespace MATH2.BuiltInPlugins
                 // Expression e = new Expression();
                 //   e += exp;
                 sequence = MATH2.Utils.Sequences.ParseSequence(raw);
-                steps.Add(new Step(null, raw + " - start off with the sequence",new StepData.LaTeXData(raw),StepData.DataType.LaTeX));
+               // steps.Add(new Step(null, raw + " - start off with the sequence",new StepData.LaTeXData(raw),StepData.DataType.LaTeX));
                 //  Console.WriteLine("First difference:");
                 Expression firstdif = S.GetDifference(sequence)[S.GetDifference(sequence).Count - 1];
 
                 List<List<Expression>> branches = new List<List<Expression>>();
                 branches.Add(sequence);
                 branches.Add(S.GetDifference(sequence));
-
+               // (80*x)-((19*x*y)-((-80+(81*x*y)))+((1/2)*(n*n)))*(13*y*y)+(4*x)
                 steps.Add(new Step(firstdif, "find the first difference",new StepData.BranchData(branches)));
                 //Console.WriteLine(Infix.Print(firstdif));
                 t_n = t_n * firstdif;

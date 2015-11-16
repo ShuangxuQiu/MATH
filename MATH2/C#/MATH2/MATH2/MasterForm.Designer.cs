@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +48,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.FinalAnswer = new System.Windows.Forms.Panel();
             this.laTeXDisplay1 = new MATH2.Controls.LaTeXDisplay();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -57,6 +60,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -165,6 +169,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.DimGray;
+            this.splitContainer2.Panel1.Controls.Add(this.trackBar2);
+            this.splitContainer2.Panel1.Controls.Add(this.label5);
             this.splitContainer2.Panel1.Controls.Add(this.panel1);
             this.splitContainer2.Panel1.Controls.Add(this.richTextBox1);
             this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
@@ -173,13 +179,37 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Silver;
             this.splitContainer2.Panel2.Controls.Add(this.Answers);
             this.splitContainer2.Panel2.Controls.Add(this.panel3);
             this.splitContainer2.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer2.Size = new System.Drawing.Size(811, 361);
             this.splitContainer2.SplitterDistance = 146;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.trackBar2.LargeChange = 1;
+            this.trackBar2.Location = new System.Drawing.Point(0, 93);
+            this.trackBar2.Maximum = 9;
+            this.trackBar2.Minimum = -20;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(146, 45);
+            this.trackBar2.TabIndex = 5;
+            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar2.Value = 2;
+            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Location = new System.Drawing.Point(0, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Math Display Size:";
             // 
             // panel1
             // 
@@ -261,6 +291,7 @@
             this.Answers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Answers.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Answers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.Answers.Location = new System.Drawing.Point(2, 106);
             this.Answers.Name = "Answers";
@@ -271,9 +302,11 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.FinalAnswer);
             this.panel3.Controls.Add(this.flowLayoutPanel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(661, 100);
@@ -298,6 +331,17 @@
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Answer:";
+            // 
+            // FinalAnswer
+            // 
+            this.FinalAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FinalAnswer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FinalAnswer.Location = new System.Drawing.Point(2, 25);
+            this.FinalAnswer.Name = "FinalAnswer";
+            this.FinalAnswer.Size = new System.Drawing.Size(659, 75);
+            this.FinalAnswer.TabIndex = 1;
             // 
             // laTeXDisplay1
             // 
@@ -326,9 +370,11 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -361,5 +407,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel Answers;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel FinalAnswer;
     }
 }

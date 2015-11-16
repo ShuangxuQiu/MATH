@@ -69,9 +69,9 @@ namespace MATH2
         {
             Controls.StepUC UC = new Controls.StepUC(this.notes);
             UC.Append(data, datatype);
-           // UC.Dock = System.Windows.Forms.DockStyle.Top;
-            UC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            UC.Dock = System.Windows.Forms.DockStyle.Top;
+        //    UC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+         //   | System.Windows.Forms.AnchorStyles.Right)));
             return UC;
         }
         public override string ToString()
